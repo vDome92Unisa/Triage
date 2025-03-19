@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Triage</title>
+</head>
+<body>
+    <!--Simulazione di un triage ospedaliero utilizzando jQuery.
+        L'operatore deve inserire i dati del paziente e ottenere una valutazione della gravità
+        basata su specifici parametri clinici.
+        La gravità sarà indicata con un colore: verde, giallo, rosso.
+        Il modulo di accettazione deve essere composto da:
+        - Nome
+        - Cognome
+        - Età
+        - Temperatura
+        - Frequenza cardiaca
+        - Pressione sanguigna (divisa in minima e massima)
+        Dopo aver validato i dati inseriti e aver calcolato la gravità del paziente,
+        quest'ultimo dovrà essere inserito in una lista dinamica formato tabella.
+        Verde (non urgente): Parametri normali.
+        Giallo (urgenza moderata): Febbre > 38.5°C, frequenza cardiaca > 100BPM, pressione > 140/90.
+        Rosso (urgenza elevata): Febbre > 39.5°C, frequenza cardiaca < 50BPM, pressione < 90/60.
+    -->
+
+    <h1>Accettazione pazienti</h1>
+<div>
+    <form id="form" method="post">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required>
+        <label for="eta">Età</label>
+        <input type="text" id="eta" name="eta" min="0" max="120" required>
+        <label for="temperature">Temperatura</label>
+        <input type="text" id="temperatura" name="temperatura" min="34" max="43" step="0.1" required>
+        <label for="frequenza">Frequenza cardiaca</label>
+        <input type="text" id="frequenza" name="frequenza" min="0" max="200" required>
+        <label for="saturazione">Saturazione o2</label>
+        <input type="text" id="saturazione" name="saturazione" min="0" max="100" required>
+        <label>Pressione sanguigna</label>
+        <label for="pressionemax">Max</label>
+        <input type="text" id="pressionemax" name="pressionemax" min="80" max="200" required>
+        <label for="pressionemin">Min</label>
+        <input type="text" id="pressionemin" name="pressionemin" min="60" max="110" required>
+        <button type="submit" id="submit">Valutazione</button>
+    </form>
+</div>
+    <table id="pazienti">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Temperatura</th>
+                <th>Frequenza cardiaca</th>
+                <th>Saturazione o2</th>
+                <th>Pressione sanguigna</th>
+                <th>Codice</th>
+                <th>Presa in Carico</th>
+            </tr>
+        </thead>
+        <tbody id="pazienti-body"></tbody>
+    </table>
+</body>
+</html>

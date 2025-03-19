@@ -1,0 +1,86 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vh;
+    border: 1px solid black;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(93, 133, 192);
+}
+
+.verde {
+    background-color: lightgreen;
+}
+
+.giallo {
+    background-color: lightyellow;
+}
+
+.rosso {
+    background-color: lightcoral;
+}
+
+.critico {
+    animation: Lampeggia 1s infinite;
+}
+
+@keyframes Lampeggia {
+    0% { background-color: red; }
+    50% { background-color: transparent; }
+    100% { background-color: red; }
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(93, 133, 192);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: rgb(195, 207, 226);
+}
