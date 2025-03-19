@@ -143,6 +143,7 @@
                             button.prop('disabled', true);
                             button.remove();
                             OrdinamentoTabella();
+                            ValoriRandom();
                         });
                         paziente.append(button);
                     }
